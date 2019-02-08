@@ -1,5 +1,6 @@
 # Run arduino-builder
 Github Action to run arduino-builder for sketches and see if they compile.
+Used Arduino IDE version is `1.8.3`.
 
 ## Usage
 ```
