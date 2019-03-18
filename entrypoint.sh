@@ -13,6 +13,8 @@ if [ -z "$LIBRARIES_PATH" ]; then
 fi
 
 if [ ! -z "$SKETCH_PATH" ]; then
+    SKETCH_PATH=$(readlink -f "$SKETCH_PATH")
+    cd /opt/arduino
     if [ -z "$1" ]; then
         ./arduino-builder -hardware ./hardware -tools ./hardware/tools/avr -tools ./tools-builder -libraries ./libraries -libraries $LIBRARIES_PATH -libraries $GITHUB_WORKSPACE/../ -fqbn $BOARD_NAME "$SKETCH_PATH"
     else
