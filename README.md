@@ -18,6 +18,7 @@ The default arguments set all mandatory parameters.
 Use the [Environment variables](#environment-variables) to change some of the parameters.
 
 ### Environment variables
+* **`SKETCH_PATH`** *(optional)* : Path to a single sketch
 * **`SKETCH_DIRECTORY_PATH`** *(optional)* : Directory in which to search for sketches (default: `examples/`)
 * **`BOARD_NAME`** *(optional)* : Fully Qualified Board Name (default: `arduino:avr:uno`)
 * **`LIBRARIES_PATH`** *(optional)* : Folder containing Arduino libraries.
