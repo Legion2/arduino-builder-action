@@ -18,7 +18,7 @@ if [ ! -z "$SKETCH_PATH" ]; then
     if [ -z "$1" ]; then
         ./arduino-builder -hardware ./hardware -tools ./hardware/tools/avr -tools ./tools-builder -libraries ./libraries -libraries $LIBRARIES_PATH -libraries $GITHUB_WORKSPACE/../ -fqbn $BOARD_NAME "$SKETCH_PATH"
     else
-        ./arduino-builder $@ "$SKETCH_PATH"
+        ./arduino-builder "$@" "$SKETCH_PATH"
     fi
 else
     if [ -z "$SKETCH_DIRECTORY_PATH" ]; then
@@ -31,7 +31,7 @@ else
         if [ -z "$1" ]; then
             ./arduino-builder -hardware ./hardware -tools ./hardware/tools/avr -tools ./tools-builder -libraries ./libraries -libraries $LIBRARIES_PATH -libraries $GITHUB_WORKSPACE/../ -fqbn $BOARD_NAME $sketch
         else
-            ./arduino-builder $@ $sketch
+            ./arduino-builder "$@" $sketch
         fi
     done
 fi
