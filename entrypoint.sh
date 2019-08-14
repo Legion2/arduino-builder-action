@@ -1,15 +1,15 @@
 #!/bin/sh
 set -e
 
-BUILDER_PATH=/opt/arduino
-LIBRARIES_PATH=$BUILDER_PATH/libraries:$GITHUB_WORKSPACE/../
+BUILDER_PATH="/opt/arduino"
+LIBRARIES_PATH="$BUILDER_PATH/libraries:$GITHUB_WORKSPACE/../"
 
-SKETCH_PATH=$INPUT_SKETCHPATH
-BOARD_NAME=$INPUT_BOARD
-SKETCH_DIRECTORY_PATH=$INPUT_SKETCHDIRECTORYPATH
+SKETCH_PATH="$INPUT_SKETCHPATH"
+BOARD_NAME="$INPUT_BOARD"
+SKETCH_DIRECTORY_PATH="$INPUT_SKETCHDIRECTORYPATH"
 
 if [ -d "$INPUT_LIBRARIESPATH" ]; then
-    LIBRARIES_PATH=$LIBRARIES_PATH:$INPUT_LIBRARIESPATH
+    LIBRARIES_PATH="$LIBRARIES_PATH:$INPUT_LIBRARIESPATH"
 fi
 
 getLibraryOptions() {
@@ -20,7 +20,7 @@ getLibraryOptions() {
     done
 }
 
-BUILDER_OPTIONS=-hardware $BUILDER_PATH/hardware -tools $BUILDER_PATH/hardware/tools/avr -tools $BUILDER_PATH/tools-builder `getLibraryOptions $LIBRARIES_PATH` -fqbn $BOARD_NAME
+BUILDER_OPTIONS="-hardware $BUILDER_PATH/hardware -tools $BUILDER_PATH/hardware/tools/avr -tools $BUILDER_PATH/tools-builder `getLibraryOptions $LIBRARIES_PATH` -fqbn $BOARD_NAME"
 
 if [ -n "$SKETCH_PATH" ]; then
     if [ -z "$1" ]; then
