@@ -15,7 +15,7 @@ inputs:
     description: |
       Directory containing Arduino libraries.
       Use this directory to install required 3rd-party libraries.
-    default: '/github/libraries/'
+    default: 'libraries/'
 runs:
   using: 'docker'
   image: 'Dockerfile'

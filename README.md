@@ -26,7 +26,7 @@ Only use arguments if the input parameters don't provide the feature you need.
 See the the [action.yml](action.yml) for comprehensive list of input parameters.
 
 ### Install Libraries
-Libraries SHOULD be installed by a previous step in the job in `/github/libraries/`.
+Libraries SHOULD be installed by a previous step in the job in `libraries/`.
 You can use [Download GitHub Release Action](https://github.com/marketplace/actions/download-github-release) to install a library form a GitHub Release.
 
 ## License
