@@ -12,10 +12,11 @@ if [ -d "$INPUT_LIBRARIESPATH" ]; then
     LIBRARIES_PATH=$LIBRARIES_PATH:$INPUT_LIBRARIESPATH
 fi
 
-function getLibraryOptions() {
-    IFS=: for library in $1
+getLibraryOptions() {
+    local IFS=":"
+    for library in $1
     do
-        echo -n "-libraries $library"
+        echo -n " -libraries $library"
     done
 }
 
