@@ -1,0 +1,27 @@
+name: 'Run arduino-builder'
+description: 'Run the arduino-builder for all sketches and see if they compile'
+author: 'Leon Kiefer'
+inputs: 
+  sketch:
+    description: 'Path to a single sketch'
+    required: false
+  sketchDirectory:
+    description: 'Directory in which to search for sketches'
+    default: 'examples'
+  board:
+    description: 'Fully Qualified Board Name'
+    default: 'arduino:avr:uno'
+  libraries:
+    description: |
+      Directory containing Arduino libraries.
+      Use this directory to install required 3rd-party libraries.
+    default: 'libraries'
+  hardware:
+    description: 'Directory containing Arduino platforms'
+    default: 'hardware'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'server'  
+  color: 'blue'
