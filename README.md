@@ -1,3 +1,7 @@
+**DEPRECATION WARNING**: Arduino Builder is being phased out in favor of [Arduino CLI](https://github.com/arduino/arduino-cli), I recommend using [Test compile for Arduino](https://github.com/marketplace/actions/test-compile-for-arduino) by ArminJo.
+
+Read [my blog post](https://legion2.github.io/2020/03/27/from-arduino-builder-to-arduino-cli.html) on how to use Arduino CLI in GitHub Actions and how to migrate from this Action to Arduino CLI.
+
 # Run arduino-builder
 Github Action to run arduino-builder for sketches and see if they compile.
 Used Arduino IDE version is `1.8.3`.
